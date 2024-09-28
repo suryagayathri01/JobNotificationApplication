@@ -7,17 +7,23 @@ In this project, I implemented a Spring Boot-based CRUD application to manage jo
   ### 2 Controller: JobNotificationController
   The JobNotificationController class is the entry point for the API. It exposes endpoints for CRUD operations, allowing users to interact with the system.
 
-* POST /jobs: Adds a new job notification.
-* GET /jobs: Retrieves all job notifications.
-* GET /jobs/{id}: Retrieves a job notification by jobId.
-* DELETE /jobs/{id} (Optional): Deletes a job notification by jobId.
+  * POST /jobs: Adds a new job notification.
+  * GET /jobs: Retrieves all job notifications.
+  * GET /jobs/{id}: Retrieves a job notification by jobId.
+  * DELETE /jobs/{id} (Optional): Deletes a job notification by jobId.
 
-  ### Service: JobNotificationService
+  ### 3 Service: JobNotificationService
   The JobNotificationService class contains the business logic for managing job notifications. It uses the repository to perform database operations. The key methods include:
 
-* addJobNotification: Adds a new job notification to the database.
-* getAllJobNotifications: Retrieves all job notifications from the database.
-* getJobNotificationById: Fetches a specific job notification based on the jobId.
+  * addJobNotification: Adds a new job notification to the database.
+  * getAllJobNotifications: Retrieves all job notifications from the database.
+  * getJobNotificationById: Fetches a specific job notification based on the jobId.
+
+  ### 4 Repository: JobRepository
+The JobRepository extends JpaRepository, which provides built-in methods for performing CRUD operations. This interface makes it easy to persist job notifications without manually writing SQL queries.
+
+ ### 5 Database Configuration: MySQL
+To connect the application to a MySQL database, I updated the application.properties file with the MySQL connection details. This allowed the Spring Boot application to persist data in a MySQL database.
 
   
   
